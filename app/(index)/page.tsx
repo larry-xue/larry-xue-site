@@ -55,10 +55,10 @@ export default function Home() {
       github: "https://github.com/larry-xue/folder-to-json"
     },
     {
-      title: "Personal Portfolio with VitePress",
-      desc: "Built a personal portfolio website using VitePress and DaisyUI.",
+      title: "Larry Xue Site",
+      desc: "Built a personal website using Next.js and Next UI.",
       preview: "https://larryxue.dev/",
-      github: "https://github.com/larry-xue/larry-blog-vitepress"
+      github: "https://github.com/larry-xue/larry-xue-site"
     },
     {
       title: "Vite Vue2 Starter Template",
