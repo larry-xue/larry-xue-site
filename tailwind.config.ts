@@ -11,42 +11,22 @@ const config: Config = {
   plugins: [
     nextui({
       themes: {
-        "light-green": {
-          extend: "light", // Inherit default values from light theme
+        dark: {
           colors: {
-            background: "#F5F8F9", // Light green background
-            foreground: "#333333", // Darker text for contrast
-
             primary: {
-              '50': '#edfcf4',
-              '100': '#d4f7e3',
-              '200': '#adedcc',
-              '300': '#78ddaf',
-              '400': '#36b37e',
-              '500': '#1eab74',
-              '600': '#118a5d',
-              '700': '#0e6e4d',
-              '800': '#0d583f',
-              '900': '#0c4834',
-              '950': '#05291e',
-              DEFAULT: "#1eab74",
-              foreground: "#333333",
+              DEFAULT: "#BEF264",
+              foreground: "#000000",
             },
-            focus: "#29D98B", // Slightly darker green for focus
+            focus: "#BEF264",
           },
-          layout: {
-            // Inherit layout values from dark theme (or light, depending on your preference)
-            disabledOpacity: "0.3",
-            radius: {
-              small: "4px",
-              medium: "6px",
-              large: "8px",
+        },
+        light: {
+          colors: {
+            primary: {
+              DEFAULT: "#427413",
+              foreground: "#000000",
             },
-            borderWidth: {
-              small: "1px",
-              medium: "2px",
-              large: "3px",
-            },
+            focus: "#427413",
           },
         },
       },

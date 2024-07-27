@@ -3,6 +3,7 @@
 import React from "react";
 import { Tabs, Tab } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
+import { ThemeSwitcher } from "../ThemeSwitcher";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -14,8 +15,7 @@ export default function Navbar() {
         <Tab key="/" href="/" title="Home" />
         <Tab key="/blog" href="/blog" title="Blog" />
         <Tab key="/contact" href="/contact" title="Contact" />
-        {/* search */}
-        <Tab key="/search" href="/search" title="Search" />
+        <Tab key="theme" className="p-0" title={<ThemeSwitcher />} onClick={() => window.location.reload()} />
       </Tabs>
     </div>
   );

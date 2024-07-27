@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Navbar from '@/components/layout/navbar';
 import Footer from "@/components/layout/footer";
 
@@ -15,14 +16,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <body>
         <NextUIProvider>
-          <Navbar />
-          <main className="flex flex-col items-center justify-between p-24 max-w-[1000px] my-0 mx-auto light-green" style={{minHeight: "calc(100vh - 6rem)"}}>
-            {children}
-          </main>
-          <Footer />
+          <NextThemesProvider attribute="class" defaultTheme="dark">
+            <Navbar />
+            <main className="flex flex-col items-center justify-between p-24 max-w-[1000px] my-0 mx-auto light-green" style={{ minHeight: "calc(100vh - 6rem)" }}>
+              {children}
+            </main>
+            <Footer />
+          </NextThemesProvider>
         </NextUIProvider>
       </body>
     </html>
