@@ -75,7 +75,7 @@ export default function Home() {
   return (
     <>
       <div className="mx-auto w-full text-center mt-16 md:flex justify-center gap-12">
-        <div className="avatar hover:scale-110 duration-300">
+        <div className="avatar hover:scale-110 duration-300 flex justify-center items-center">
           <Image className="rounded-tl-lg rounded-br-lg" width={200} height={200} src="/avatar.png" alt="avatar" as={NextImage} />
         </div>
         <div>
