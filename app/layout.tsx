@@ -4,6 +4,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Navbar from '@/components/layout/navbar';
 import Footer from "@/components/layout/footer";
+import StarAnimation from "@/components/star-animation";
 
 export const metadata: Metadata = {
   title: "Larry Xue | Frontend Developer | JavaScript Enthusiast",
@@ -25,6 +26,8 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+
+            <StarAnimation />
           </NextThemesProvider>
         </NextUIProvider>
       </body>

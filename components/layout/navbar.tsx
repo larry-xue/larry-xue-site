@@ -3,7 +3,7 @@
 import React from "react";
 import { Tabs, Tab } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
-import { ThemeSwitcher } from "../ThemeSwitcher";
+import { ThemeSwitcher } from "../theme-switcher";
 
 export default function Navbar() {
   const pathname = usePathname();

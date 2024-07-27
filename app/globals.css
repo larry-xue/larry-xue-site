@@ -7,3 +7,20 @@
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   }
 }
+
+.star {
+  transform-style: preserve-3d;
+  width: 1px;
+  height: 1px;
+  position: fixed;
+  color: red;
+  z-index: 1000;
+}
+
+.star:before {
+  position: absolute;
+  content: "\2726";
+  color: inherit;
+  inset: 0;
+  text-shadow: 0 0 0.8em #fff5;
+}
