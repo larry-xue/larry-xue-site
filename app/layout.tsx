@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/navbar';
 import Footer from "@/components/layout/footer";
 import StarAnimation from "@/components/star-animation";
 import { Analytics } from "@vercel/analytics/react"
+import CoverLetter from "@/components/cover-letter";
 
 export const metadata: Metadata = {
   title: "Larry Xue | Frontend Developer | JavaScript Enthusiast",
@@ -23,7 +24,8 @@ export default function RootLayout({
         <NextUIProvider>
           <NextThemesProvider attribute="class" defaultTheme="dark">
             <Navbar />
-            <main className="flex flex-col items-center justify-between p-24 max-w-[1000px] my-0 mx-auto light-green" style={{ minHeight: "calc(100vh - 6rem)" }}>
+            <main className="flex flex-col items-center p-24 max-w-[1000px] my-0 mx-auto light-green" style={{ minHeight: "calc(100vh - 6rem)" }}>
+              <CoverLetter />
               {children}
             </main>
             <Footer />
