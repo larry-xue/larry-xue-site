@@ -5,6 +5,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Navbar from '@/components/layout/navbar';
 import Footer from "@/components/layout/footer";
 import StarAnimation from "@/components/star-animation";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Larry Xue | Frontend Developer | JavaScript Enthusiast",
@@ -28,6 +29,7 @@ export default function RootLayout({
             <Footer />
 
             <StarAnimation />
+            <Analytics />
           </NextThemesProvider>
         </NextUIProvider>
       </body>
