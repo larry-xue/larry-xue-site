@@ -186,7 +186,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-4">
           {
             sideProjects.map((project) => (
-              <Card className="w-[300px]" key={project.github}>
+              <Card className="md:w-[300px] w-full" key={project.github}>
                 <CardHeader className="flex gap-3">
                   <h2 className="text-md">{project.title}</h2>
                 </CardHeader>
