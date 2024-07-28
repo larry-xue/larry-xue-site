@@ -7,7 +7,7 @@ export default function CoverLetter() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
-    <div role="alert" className="bg-secondary-500 text-white p-2 rounded-lg flex gap-2">
+    <div role="alert" className="bg-secondary-500 text-white p-2 rounded-lg flex gap-2 w-full">
       🐰
       <div>
         <span>
