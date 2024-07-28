@@ -14,7 +14,7 @@ export default function Blog() {
       <Card
         key={post.id}
         shadow="sm"
-        className="bg-slate-50 dark:bg-black mb-10"
+        className="mb-10"
       >
         <CardBody className="text-center transition-all duration-300 hover:text-shadow-3 hover:scale-105">
           <Image
