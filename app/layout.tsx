@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/navbar';
 import Footer from "@/components/layout/footer";
 import StarAnimation from "@/components/star-animation";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import CoverLetter from "@/components/cover-letter";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
 
             <StarAnimation />
             <Analytics />
+            <SpeedInsights />
           </NextThemesProvider>
         </NextUIProvider>
       </body>
