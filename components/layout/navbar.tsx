@@ -7,7 +7,6 @@ import { ThemeSwitcher } from "../theme-switcher";
 
 export default function Navbar() {
   const pathname = usePathname();
-  console.log("pathname", pathname);
 
   return (
     <div className="w-screen h-auto fixed top-4 flex justify-center items-center light-green z-50">

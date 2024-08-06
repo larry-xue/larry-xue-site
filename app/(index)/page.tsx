@@ -4,6 +4,7 @@ import { Card, CardBody, CardFooter, CardHeader, Divider, Image, Link } from "@n
 import NextImage from "next/image";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { Chip } from "@nextui-org/chip";
+import SideMenu from "./components/side-menu";
 
 export default function Home() {
   const technologies: Record<string, string[]> = {
@@ -74,15 +75,16 @@ export default function Home() {
 
   return (
     <>
+      <SideMenu />
       <div className="mx-auto w-full text-center mt-16 md:flex justify-center gap-12">
         <div className="avatar hover:scale-110 duration-300 flex justify-center items-center">
           <Image className="rounded-tl-lg rounded-br-lg" width={200} height={200} src="/avatar.png" alt="avatar" as={NextImage} />
         </div>
         <div>
           <h1
-            className="hover:text-shadow-3 m-0 font-heading font-black tracking-[-0.25rem] transition-all duration-300 text-primary text-4xl md:text-5xl">
+            className="hover:text-shadow-3 m-0 font-heading font-black transition-all duration-300 text-primary text-4xl md:text-5xl mt-4">
             Yujian(Larry) Xue</h1>
-          <div className="flex flex-col gap-4 italic text-lg md:text-left mt-2">
+          <div className="flex flex-col gap-4 italic text-lg md:text-left mt-4">
             <p>Frontend Engineer 💻</p>
             <p>Side Project Manager 🚀</p>
             <p>Beginner UI/UX Designer 🤯</p>
@@ -100,7 +102,7 @@ export default function Home() {
         <h4
           className="hover:text-shadow-3 m-0 font-heading text-lg font-black tracking-[-0.1rem] transition-all duration-300">
         </h4>
-        <Accordion variant="splitted" selectionMode="multiple">
+        <Accordion variant="splitted" selectionMode="multiple" defaultExpandedKeys={["technologies and tools", "personal traits"]}>
           <AccordionItem
             title="Technologies and Tools"
             key="technologies and tools"
@@ -148,13 +150,13 @@ export default function Home() {
         </Accordion>
       </div>
 
-      <div className="my-12 px-4 w-full">
+      <div className="my-12 px-4 w-full" id="experience">
         <h1
           className="hover:text-shadow-3 m-0 font-heading text-[clamp(3rem,_10vw,_4.5rem)] font-black tracking-[-0.2rem] transition-all duration-300">
           Experience</h1>
 
-        <Accordion selectionMode="multiple">
-          {experienceList.map((exp) => (
+        <Accordion selectionMode="multiple" defaultExpandedKeys={experienceList.map((exp) => exp.title)}>
+          {experienceList.map((exp, idx) => (
             <AccordionItem
               title={exp.title}
               subtitle={exp.company + exp.time}
@@ -169,7 +171,7 @@ export default function Home() {
         </Accordion>
       </div >
 
-      <div className="mb-12 px-4 w-full">
+      <div className="mb-12 px-4 w-full" id="education">
         <h1
           className="hover:text-shadow-3 m-0 font-heading text-[clamp(3rem,_10vw,_4.5rem)] font-black tracking-[-0.2rem] transition-all duration-300">
           Education</h1>
@@ -179,7 +181,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mb-12 px-4">
+      <div className="mb-12 px-4" id="side-projects" >
         <h1
           className="hover:text-shadow-3 m-0 font-heading text-[clamp(3rem,_10vw,_4.5rem)] font-black tracking-[-0.2rem] transition-all duration-300">
           Side Projects</h1>

@@ -14,7 +14,6 @@
   height: 1px;
   position: fixed;
   color: red;
-  z-index: 1000;
 }
 
 .star:before {
