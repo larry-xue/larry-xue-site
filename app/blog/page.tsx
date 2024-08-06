@@ -16,7 +16,7 @@ export default function Blog() {
         shadow="sm"
         className="mb-10"
       >
-        <CardBody className="text-center transition-all duration-300 hover:text-shadow-3 hover:scale-105">
+        <CardBody className="text-center transition-all duration-300 hover:text-shadow-3">
           <Image
             shadow="sm"
             isZoomed
@@ -27,10 +27,10 @@ export default function Blog() {
             src={post.ogImage}
           />
           <h4
-            className="hover:text-shadow-3 m-0 font-heading text-4xl font-black tracking-[-0.2rem] transition-all duration-300">
+            className="mt-1 font-serif font-heading text-3xl transition-all duration-300">
             {post.title}</h4>
           <p
-            className="hover:text-shadow-3 m-0 font-heading text-lg font-black tracking-[-0.1rem] transition-all duration-300">
+            className="text-lg font-mono transition-all duration-300">
             {post.description}</p>
         </CardBody>
         <CardFooter className="flex justify-between text-xs text-gray-500 transition-all duration-300">

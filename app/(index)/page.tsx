@@ -80,17 +80,17 @@ export default function Home() {
         </div>
         <div>
           <h1
-            className="hover:text-shadow-3 m-0 font-heading font-black tracking-[-0.3rem] transition-all duration-300 text-primary text-4xl md:text-5xl">
+            className="hover:text-shadow-3 m-0 font-heading font-black tracking-[-0.25rem] transition-all duration-300 text-primary text-4xl md:text-5xl">
             Yujian(Larry) Xue</h1>
           <div className="flex flex-col gap-4 italic text-lg md:text-left mt-2">
             <p>Frontend Engineer 💻</p>
             <p>Side Project Manager 🚀</p>
-            <p>Open Source Contributor 🤯</p>
+            <p>Beginner UI/UX Designer 🤯</p>
           </div>
         </div>
       </div>
       <div className="px-4 mt-2">
-        <h4 className="hover:text-shadow-3 m-0 font-heading text-lg font-black tracking-[-0.1rem] transition-all duration-300">A
+        <h4 className="hover:text-shadow-3 m-0 font-heading text-lg font-black transition-all duration-300">A
           bit about me</h4>
         <p>Hey there! 👋 I'm Yujian (Larry), a results-driven Front-End Developer with over 2 years of fulltime work experience,
           specializing in web application development. Currently employed at eSurfing Cloud, I'm passionate about crafting

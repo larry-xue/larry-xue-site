@@ -8,6 +8,9 @@ import StarAnimation from "@/components/star-animation";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import CoverLetter from "@/components/cover-letter";
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Larry Xue | Frontend Developer | JavaScript Enthusiast",
@@ -21,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body>
+      <body className={inter.className}>
         <NextUIProvider>
           <NextThemesProvider attribute="class" defaultTheme="dark">
             <Navbar />
