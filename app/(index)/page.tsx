@@ -5,6 +5,8 @@ import NextImage from "next/image";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { Chip } from "@nextui-org/chip";
 import SideMenu from "./components/side-menu";
+import PreviewIframe from "@/components/preview-iframe";
+import useScreenSize from "@/hooks/useScreenSize";
 
 export default function Home() {
   const technologies: Record<string, string[]> = {
@@ -75,13 +77,10 @@ export default function Home() {
     }
   ]
 
-  const onOpenLink = (link: string) => {
-    window.open(link, '_blank')
-  }
-
+  const { isSmallScreen, showSideMenu } = useScreenSize();
   return (
     <>
-      <SideMenu />
+      {showSideMenu && <SideMenu />}
       <div className="mx-auto w-full text-center mt-16 md:flex justify-center gap-12">
         <div className="avatar hover:scale-110 duration-300 flex justify-center items-center">
           <Image className="rounded-tl-lg rounded-br-lg" width={200} height={200} src="/avatar.png" alt="avatar" as={NextImage} />
@@ -200,7 +199,10 @@ export default function Home() {
                 </CardHeader>
                 <Divider />
                 <CardBody>
-                  <p>{project.desc}</p>
+                  {project.preview && window.self === window.top && !isSmallScreen ? <div className="flex gap-2 h-[400px]">
+                    <p className="text-sm w-1/3 text-gray-500 dark:text-gray-400 leading-loose">{project.desc}</p>
+                    <PreviewIframe url={project.preview} />
+                  </div> : <p className="text-sm text-gray-500 dark:text-gray-400 leading-loose">{project.desc}</p>}
                 </CardBody>
                 <Divider />
                 <CardFooter className="flex gap-3">
