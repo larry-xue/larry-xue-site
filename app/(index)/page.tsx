@@ -50,16 +50,22 @@ export default function Home() {
       github: "https://github.com/larry-xue/nuxt-chat-cloudflare",
     },
     {
-      title: "Folder to JSON",
-      desc: "Folder to JSON is a web application utilizing the showDirectoryPicker API to enable users to select a folder on their local machine. It recursively retrieves subdirectories to generate a JSON tree structure representing the directory hierarchy.",
-      preview: "https://folder2json.larryxue.dev/",
-      github: "https://github.com/larry-xue/folder-to-json"
-    },
-    {
       title: "Larry Xue Site",
       desc: "Built a personal website using Next.js and Next UI.",
       preview: "https://larryxue.dev/",
       github: "https://github.com/larry-xue/larry-xue-site"
+    },
+    {
+      title: "Weather App",
+      desc: "A simple weather app using Open-Meteo API and React.",
+      preview: "https://weather-app-react-75h.pages.dev/",
+      github: "https://github.com/larry-xue/weather-app-react"
+    },
+    {
+      title: "Folder to JSON",
+      desc: "Folder to JSON is a web application utilizing the showDirectoryPicker API to enable users to select a folder on their local machine. It recursively retrieves subdirectories to generate a JSON tree structure representing the directory hierarchy.",
+      preview: "https://folder2json.larryxue.dev/",
+      github: "https://github.com/larry-xue/folder-to-json"
     },
     {
       title: "Vite Vue2 Starter Template",
