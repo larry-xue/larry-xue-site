@@ -7,6 +7,7 @@ import { Chip } from "@nextui-org/chip";
 import SideMenu from "./components/side-menu";
 import PreviewIframe from "@/components/preview-iframe";
 import useScreenSize from "@/hooks/useScreenSize";
+import { useWindow } from "@/hooks/useWindow";
 
 export default function Home() {
   const technologies: Record<string, string[]> = {
@@ -78,6 +79,8 @@ export default function Home() {
   ]
 
   const { isSmallScreen, showSideMenu } = useScreenSize();
+  const _window = useWindow()
+
   return (
     <>
       {showSideMenu && <SideMenu />}
@@ -199,7 +202,7 @@ export default function Home() {
                 </CardHeader>
                 <Divider />
                 <CardBody>
-                  {project.preview && window.self === window.top && !isSmallScreen ? <div className="flex gap-2 h-[400px]">
+                  {project.preview && _window?.self === _window?.top && !isSmallScreen ? <div className="flex gap-2 h-[400px]">
                     <p className="text-sm w-1/3 text-gray-500 dark:text-gray-400 leading-loose">{project.desc}</p>
                     <PreviewIframe url={project.preview} />
                   </div> : <p className="text-sm text-gray-500 dark:text-gray-400 leading-loose">{project.desc}</p>}
