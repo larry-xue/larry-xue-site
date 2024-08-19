@@ -1,10 +1,17 @@
 'use client'
 
-import React from "react";
-import { Link, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Chip } from "@nextui-org/react";
+import React, { useState } from "react";
+import { track } from '@vercel/analytics';
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Chip } from "@nextui-org/react";
 
 export default function CoverLetter() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [isViewed, setIsViewed] = useState(false);
+
+  if (isOpen && !isViewed) {
+    track('cover-letter-viewed', {}, { flags: ['cover-letter-viewed'] });
+    setIsViewed(true);
+  }
 
   return (
     <div role="alert" className="bg-secondary-500 text-white p-2 rounded-lg flex gap-2 w-full">
