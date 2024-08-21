@@ -16,7 +16,7 @@ export default function Contact() {
     },
     {
       title: "LinkedIn",
-      link: "https://www.linkedin.com/in/yujay-xue-588386212/",
+      link: "https://www.linkedin.com/in/larry-xue-588386212/",
       desc: "yujay-xue",
       showAnchorIcon: true
     }
