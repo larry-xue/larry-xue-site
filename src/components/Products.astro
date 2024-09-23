@@ -1,0 +1,40 @@
+---
+const products = [
+	"I design and build beautiful portfolios for you.",
+	"I write tech blogs, sharing life experiences and my pet stories.",
+	"I share my story with you!"
+];
+---
+
+<section id="products" class="section-container pt-20">
+	<h2 class="text-4xl font-semibold mb-8 text-center">My Products</h2>
+	<ul class="space-y-6">
+		{products.map((product, index) => (
+			<li class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg transition-all duration-300 hover:bg-accent-light hover:text-primary-light dark:hover:bg-accent-dark dark:hover:text-primary-dark transform hover:-translate-y-1">
+				<span class="text-accent-light dark:text-accent-dark font-semibold text-xl mb-2 block">0{index + 1}</span>
+				{product}
+			</li>
+		))}
+	</ul>
+</section>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	gsap.from("#products", {
+		duration: 0.8,
+		opacity: 0,
+		x: -50,
+		stagger: 0.3,
+		ease: "power3.out",
+		scrollTrigger: {
+			trigger: "#products",
+			start: "top 80%",
+			end: "bottom 20%",
+			toggleActions: "restart none none reverse"
+		}
+	});
+</script>

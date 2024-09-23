@@ -1,0 +1,31 @@
+---
+const skills = ["Freelancer", "UI/UX Designer", "Type Animation"];
+---
+
+<section id="skills" class="section-container pt-20">
+	<h2 class="text-4xl font-semibold mb-8 text-center">Skills</h2>
+	<ul class="flex flex-wrap justify-center gap-4">
+		{skills.map(skill => <li class="bg-secondary-light dark:bg-secondary-dark px-6 py-3 rounded-full text-lg hover:bg-accent-light hover:text-primary-light dark:hover:bg-accent-dark dark:hover:text-primary-dark transition-all duration-300 transform hover:scale-110">{skill}</li>)}
+	</ul>
+</section>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	gsap.from("#skills", {
+		duration: 0.8,
+		opacity: 0,
+		y: 50,
+		stagger: 0.2,
+		ease: "power3.out",
+		scrollTrigger: {
+			trigger: "#skills",
+			start: "top 80%",
+			end: "bottom 20%",
+			toggleActions: "restart none none reverse"
+		}
+	});
+</script>

@@ -1,0 +1,45 @@
+---
+const traits = [
+  { emoji: "🦉", title: "Remote Work Enthusiast", description: "Actively seeking remote opportunities to expand horizons." },
+  { emoji: "🪰", title: "Running Enthusiast", description: "Enjoying refreshing runs outside of coding." },
+  { emoji: "🦆", title: "Work-Life Balance Advocate", description: "Prioritizing harmony between professional and personal life." },
+  { emoji: "🐸", title: "Technical Excellence Pursuer", description: "Detail-oriented and constantly striving for excellence." },
+  { emoji: "🐲", title: "AI Technology Follower", description: "Interested in AI's potential to enhance work efficiency." },
+];
+---
+
+<section id="personal-traits" class="section-container">
+  <h2 class="text-4xl font-semibold mb-8 text-center text-text-light dark:text-text-dark">Personal Traits</h2>
+  <ul class="list-none space-y-4 text-lg md:text-xl">
+    {traits.map(trait => (
+      <li class="flex items-center bg-secondary-light dark:bg-secondary-dark p-4 rounded-lg transition-all duration-300 hover:bg-accent-light hover:text-primary-light dark:hover:bg-accent-dark dark:hover:text-primary-dark">
+        <span class="text-3xl mr-4">{trait.emoji}</span>
+        <div class="text-text-light dark:text-text-dark">
+          <span class="font-semibold">{trait.title}:</span> {trait.description}
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from("#personal-traits", {
+    duration: 0.8,
+    opacity: 0,
+    y: 50,
+    stagger: 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#personal-traits > h2",
+      start: "top center",
+      end: "top 20%",
+      toggleActions: "play none reverse none",
+      markers: true // Optional: for debugging, shows start and end markers
+    }
+  });
+</script>

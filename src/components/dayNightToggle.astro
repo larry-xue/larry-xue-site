@@ -1,0 +1,23 @@
+<button id="dayNightToggle" class="fixed top-5 right-5 z-50 bg-accent-light dark:bg-accent-dark text-primary-light dark:text-primary-dark p-2 rounded-full hover:bg-text-light hover:text-primary-light dark:hover:bg-text-dark dark:hover:text-primary-dark">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+</button>
+
+<script>
+    const toggle = document.getElementById('dayNightToggle');
+    const html = document.documentElement;
+
+    if (toggle) {   
+        toggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark').toString());
+        });
+    }
+
+    // Check for saved dark mode preference
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'true') {
+        html.classList.add('dark');
+    }
+</script>
